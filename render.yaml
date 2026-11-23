@@ -1,0 +1,11 @@
+# Render Blueprint — deploys the NOWHERE® Vite + React site as a static site.
+services:
+  - type: web
+    name: nowhere
+    runtime: static
+    buildCommand: cd site && npm ci && npm run build
+    staticPublishPath: site/dist
+    pullRequestPreviewsEnabled: false
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
